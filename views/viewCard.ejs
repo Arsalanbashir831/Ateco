@@ -4,38 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Document</title>
 </head>
 
-
 <body style="width: 216mm; height: 279mm; margin: auto">
-  <div class="card" style="width: 568px;">
+  <div class="card" style="width: 100%;">
     <div class="flex-between">
-      <img style="width: 150px; height: 100px;" class="logo" src="/images/logo.png" alt="logo" />
+      <img class="logo" src="/images/logo.png" alt="logo" />
       <div style="text-align: center; color: #14ab55">
-        <p style="text-transform: uppercase">
+        <p style="text-transform: uppercase; font-size: 12px;">
           Arabian Testing Evolution Company (ATECO)
         </p>
-        <p style="margin: 8px 0; font-size: 13px">
+        <p style="margin: 4px 0; font-size: 10px;">
           شارع الزین العابدین, Ar Rabiyah, Dammam 32437
         </p>
-        <p style="text-transform: uppercase">Welder Qualification Card</p>
+        <p style="text-transform: uppercase; font-size: 12px;">Welder Qualification Card</p>
       </div>
-      <img style="width: 100px; height: 100px;" class="qrcode" src="/<%= record.card_no%>/<%=record.qr%>" alt="QR Code" />
+      <img class="qrcode" src="/<%= record.card_no %>/<%= record.qr %>" alt="QR Code" />
     </div>
     <div class="flex">
-      <img style="width: 200px; height: 200px;" class="person-img"
-        src="/<%=record.card_no%>/<%= record.card_no%>.jpg" alt="Person" />
+      <img class="person-img" src="/<%= record.card_no %>/<%= record.card_no %>.jpg" alt="Person" />
       <table id="table-1">
         <tbody>
           <tr>
-            <td>Company : </td>
+            <td>Company :</td>
             <td><%= record.company %></td>
           </tr>
           <tr>
             <td>Welder Name:</td>
-            <td> <%= record.welder_name %></td>
+            <td><%= record.welder_name %></td>
           </tr>
           <tr>
             <td>Iqama No:</td>
@@ -43,53 +40,53 @@
           </tr>
           <tr>
             <td>Welder ID:</td>
-            <td> <%= record.welder_id %></td>
+            <td><%= record.welder_id %></td>
           </tr>
           <tr>
-            <td>Card No: </td>
-            <td><%= record.card_no  %></td>
+            <td>Card No:</td>
+            <td><%= record.card_no %></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="flex-between" style="margin-top: 3px">
       <div>
-        <p style="color: gray"><%=record.authorized_by %></p>
-        <p style="margin-top: 3px">Authorized by</p>
+        <p style="color: gray; font-size: 10px;"><%= record.authorized_by %></p>
+        <p style="margin-top: 3px; font-size: 10px;">Authorized by</p>
       </div>
       <div>
-        <p style="color: gray"><%= record.welding_inspector %></p>
-        <p style="margin-top: 3px">Welding Inspector</p>
+        <p style="color: gray; font-size: 10px;"><%= record.welding_inspector %></p>
+        <p style="margin-top: 3px; font-size: 10px;">Welding Inspector</p>
       </div>
     </div>
-    <p style="margin-top: 8px; font-size: 14px">
+    <p style="margin-top: 8px; font-size: 12px;">
       This is to certify that this person has been tested in accordance with
-      requirements of <span style="color: #14ab55"><%=record.year %></span>
+      requirements of <span style="color: #14ab55;"><%= record.year %></span>
     </p>
   </div>
-  <div style=" width: 592px; border: 2px black solid; margin-top: 10px ; ">
+  <div style="width: 100%; border: 2px black solid; margin-top: 10px;">
     <table id="table-2" style="width: 100%">
       <tr>
         <td>Card No</td>
-        <td><%= record.card_no%></td>
+        <td><%= record.card_no %></td>
         <td>WPS/PQR No.</td>
-        <td><%= record.wps_pqr_no%></td>
+        <td><%= record.wps_pqr_no %></td>
       </tr>
       <tr>
         <td>Process</td>
         <td><%= record.process %></td>
         <td>Joint Type</td>
-        <td><%= record.joint_type%></td>
+        <td><%= record.joint_type %></td>
       </tr>
       <tr>
         <td>Test Position</td>
-        <td><%=record.test_position %></td>
+        <td><%= record.test_position %></td>
         <td>Position Qualified</td>
-        <td><%= record.position_qualified%></td>
+        <td><%= record.position_qualified %></td>
       </tr>
       <tr>
         <td>Vertical Progression</td>
-        <td><%=record.vertical_progression%></td>
+        <td><%= record.vertical_progression %></td>
         <td>Test Thickness</td>
         <td><%= record.test_thickness %></td>
       </tr>
@@ -109,7 +106,7 @@
         <td>F No Qualified</td>
         <td><%= record.f_no_qualified %></td>
         <td>Electrode Class Used</td>
-        <td><%=record.electrode_class_used %></td>
+        <td><%= record.electrode_class_used %></td>
       </tr>
       <tr>
         <td>Place of Issue</td>
@@ -121,35 +118,37 @@
         <td>Date of Test</td>
         <td><%= record.date_of_test %></td>
         <td>Date of Exp</td>
-        <td><%=record.date_of_expiry%></td>
+        <td><%= record.date_of_expiry %></td>
       </tr>
     </table>
-    <p style="border: 2px black solid; padding: 5px; font-size: 15px">
+    <p style="border: 2px black solid; padding: 5px; font-size: 12px;">
       This card, on its own qualifies the welder for 6 months from the Date of
       test. Beyond this date, welding continuity records shall be consulted to ensure the welder's qualification has been maintained.
     </p>
   </div>
-<br>
-  <a class="hide-in-print" href="/Supervisor"  style="text-decoration: none; background-color: green; color: white; padding: 2px;">Back to Home</a>
+  <br>
+  <a class="hide-in-print" href="/Supervisor" style="text-decoration: none; background-color: green; color: white; padding: 5px; font-size: 12px;">Back to Home</a>
+  <a class="hide-in-print" onclick="window.print(); return false;" href="/Supervisor" style="text-decoration: none; background-color: red; color: white; padding: 5px; font-size: 12px;">Download PDF</a>
 
-  <a class="hide-in-print" onclick="window.print(); return false;" href="/Supervisor"  style="text-decoration: none; background-color: red; color: white; padding: 2px;">Download PDF</a>
   <style>
     * {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
       font-weight: 600;
-
     }
+
     @media print {
       .hide-in-print {
         display: none;
       }
     }
+
     .card {
       margin-top: 10px;
       padding: 10px;
-      border: 4px black solid
+      border: 2px black solid;
+      box-sizing: border-box;
     }
 
     .flex {
@@ -164,41 +163,36 @@
       justify-content: space-between;
     }
 
-    .logo {
-      height: 150px;
-      width: 200px
-    }
-
+    .logo,
     .qrcode {
-      height: 150px;
-      width: 150px;
+      height: 100px;
+      width: 100px;
     }
 
     .person-img {
-      height: 200px;
-      width: 200px;
-      object-fit: cover
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
     }
 
     #table-1 {
       border-collapse: separate;
-      border-spacing: 0 20px;
-      /* Adjust the second value for vertical spacing */
+      border-spacing: 0 10px;
     }
 
     #table-2 {
-      border-collapse: separate;
-      border-spacing: 0;
+      border-collapse: collapse;
+      width: 100%;
     }
 
     #table-2 td {
-      border: 2px black solid;
+      border: 1px black solid;
       padding: 5px;
+      font-size: 10px;
     }
 
     td:nth-child(even) {
       color: #14ab55;
-      /* Apply your styling for even rows */
     }
   </style>
 </body>
